@@ -1,18 +1,18 @@
 btn1 = GUI.Button('Set to 100', func(){
-	health = game.Frame.Get("Health", game.LocalPlayerEntity)
+	health = Game.Frame.Get("Health", Game.LocalPlayerEntity)
 	change = Quantum.ToFP(100) - health.CurrentHealth
 	health.CurrentHealth = Quantum.ToFP(100)
-	y = game.Frame.Set("Health", game.LocalPlayerEntity, health)
+	y = Game.Frame.Set("Health", Game.LocalPlayerEntity, health)
 	
-	game.Frame.Signals.OnActorHealthChanged(game.LocalPlayerEntity, health.CurrentHealth)
-	game.Frame.Events.OnPlayerHealthChange(game.LocalPlayerEntity, change, health.GetMaxHealth(game.Frame.Quantum, game.LocalPlayerEntity), health.CurrentHealth, Quantum.False, Quantum.False)
+	Game.Frame.Signals.OnActorHealthChanged(Game.LocalPlayerEntity, health.CurrentHealth)
+	Game.Frame.Events.OnPlayerHealthChange(Game.LocalPlayerEntity, change, health.GetMaxHealth(Game.Frame.Quantum, Game.LocalPlayerEntity), health.CurrentHealth, Quantum.False, Quantum.False)
 })
 
 btn2 = GUI.Button('Show Health', func(){
 	
 	label = GUI.TrackValue(func(){
-		if(game.Frame.Has("Health", game.LocalPlayerEntity))
-			game.Frame.Get("Health", game.LocalPlayerEntity).CurrentHealth
+		if(Game.Frame.Has("Health", Game.LocalPlayerEntity))
+			Game.Frame.Get("Health", Game.LocalPlayerEntity).CurrentHealth
 		else
 			GUI.Close("Health")
 	})
@@ -22,7 +22,7 @@ btn2 = GUI.Button('Show Health', func(){
 })
 
 btn3 = GUI.Button('Kill', func(){
-	game.Frame.Signals.ApplyDamage(Native.New("DamageInfo",("Receiver": game.LocalPlayerEntity,"Damage": Quantum.ToFP(100000))))
+	Game.Frame.Signals.ApplyDamage(Native.New("DamageInfo",("Receiver": game.LocalPlayerEntity,"Damage": Quantum.ToFP(100000))))
 })
 
 GUI.Close("Health Test")
