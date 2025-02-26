@@ -1,0 +1,19 @@
+btn1 = cui.Button('Set to 1', func(){
+	health = game.Frame.Get("Health", game.LocalPlayerEntity)
+	health.CurrentHealth = quantum.ToFP(1)
+	y = game.Frame.Set("Health", game.LocalPlayerEntity, health)
+})
+
+btn2 = cui.Button('Get', func(){
+	health = game.Frame.Get("Health", game.LocalPlayerEntity)
+	print(health.CurrentHealth)
+
+})
+
+btn3 = cui.Button('Apply', func(){
+	game.Frame.Signals.ApplyDamage(native.New("DamageInfo",("Receiver": game.LocalPlayerEntity,"Damage": quantum.ToFP(100000))))
+})
+
+cui.Close("Health Test")
+w = cui.Window("Health Test", cui.Horizontal((btn1, btn2, btn3)), true)
+
