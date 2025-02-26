@@ -19,7 +19,7 @@ btn2 = cui.Button('Show Health', func(){
 })
 
 btn3 = cui.Button('Kill', func(){
-	game.Frame.Signals.ApplyDamage(native.New("DamageInfo",("Receiver": game.LocalPlayerEntity,"Damage": Quantum.ToFP(100000))))
+	game.Frame.Signals.ApplyDamage(Native.New("DamageInfo",("Receiver": game.LocalPlayerEntity,"Damage": Quantum.ToFP(100000))))
 })
 
 cui.Close("Health Test")
