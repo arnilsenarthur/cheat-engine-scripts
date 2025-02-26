@@ -11,7 +11,10 @@ btn1 = cui.Button('Set to 100', func(){
 btn2 = cui.Button('Show Health', func(){
 	
 	label = cui.TrackValue(func(){
-		game.Frame.Get("Health", game.LocalPlayerEntity).CurrentHealth
+		if(game.Frame.Has("Health", game.LocalPlayerEntity))
+			game.Frame.Get("Health", game.LocalPlayerEntity).CurrentHealth
+		else
+			cui.Close("Health")
 	})
 	
 	w = cui.Window("Health", label, true)
