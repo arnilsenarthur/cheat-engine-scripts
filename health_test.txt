@@ -26,4 +26,4 @@ btn3 = GUI.Button('Kill', func(){
 })
 
 GUI.Close("Health Test")
-w = GUI.Window("Health Test", cui.Horizontal((btn1, btn2, btn3)), true)
+w = GUI.Window("Health Test", GUI.Horizontal((btn1, btn2, btn3)), true)
