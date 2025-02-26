@@ -1,0 +1,8 @@
+for go : Unity.FindObjectsByType(Native.FindType("GameObject"))
+{
+	cmp = go.GetComponent(Native.FindType("Asmb_MatchLoadingShowcase"))
+	if(cmp != null)
+	{
+		cmp.LoadPreset(1)
+	}
+}
