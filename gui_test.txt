@@ -1,0 +1,14 @@
+cui.Close('Test')
+
+v = cui.Vertical()
+
+v.AddElement(cui.Label("Label", unity.Color(1,1,0)))
+v.AddElement(cui.Button("Hello World", func(){ print('Hello world!')}))
+v.AddElement(cui.Toggle("Toggle", func(x) { print(x) }))
+v.AddElement(cui.TextField("Torcida Fiel", func(x) {print(x) }))
+v.AddElement(cui.NumberField(0, 0, 10, true, func(x) { print(x) }))
+v.AddElement(cui.Vector2Field(unity.Vector2(1, 2), func(x) { print(x) }))
+v.AddElement(cui.Vector3Field(unity.Vector3(1, 2, 3), func(x) { print(x) }))
+v.AddElement(cui.Vector4Field(unity.Vector4(1, 2, 3, 4), func(x) { print(x) }))
+
+w = cui.Window('Test', v, true)
