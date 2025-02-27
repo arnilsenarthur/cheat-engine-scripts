@@ -1,5 +1,5 @@
-gui_test.txt
-health_test.txt
-quantum_events.txt
-showcase_run.txt
-asset_edit.txt
+Examples/gui_test.ces
+Examples/health_test.ces
+Examples/quantum_events.ces
+Examples/showcase_run.ces
+Examples/asset_edit.ces
