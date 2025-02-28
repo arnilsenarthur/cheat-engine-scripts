@@ -1,7 +1,7 @@
 Game.UnsubscribeAllEvents()
 GUI.CloseAllWindows()
 
-Game.OnGameStart("AssetsTest", func()
+Game.OnGameStart(func()
 {
 	print("[CHEAT ENGINE] Game Started...")	
 	x = Game.SubscribeEvent("EventOnMatchStateUpdated", func(x)
