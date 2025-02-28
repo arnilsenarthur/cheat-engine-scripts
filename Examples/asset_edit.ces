@@ -6,7 +6,7 @@ Game.OnGameStart("AssetsTest", func()
 	x = Game.SubscribeEvent("AssetsTest", "EventOnMatchStateUpdated", func(x)
 	{
 		print("[CHEAT ENGINE] Match State:" + x.State)	
-		if(x.State == Native.GetEnumValue("Quantum.MatchState", "Created"))
+		if(x.State == enumValue("Quantum.MatchState", "Created"))
 		{
 			rc = Game.Frame.RuntimeConfig
 
