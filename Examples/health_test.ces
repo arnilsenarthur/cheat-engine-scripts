@@ -21,7 +21,7 @@ btn2 = GUI.Button('Show Health', func(){
 })
 
 btn3 = GUI.Button('Kill', func(){
-	Game.Frame.Signals.ApplyDamage(new("DamageInfo",("Receiver": Game.LocalPlayerEntity,"Damage": Quantum.ToFP(100000))))
+	Game.Frame.Signals.ApplyDamage(newFromPairs("DamageInfo",("Receiver": Game.LocalPlayerEntity,"Damage": Quantum.ToFP(100000))))
 })
 
 GUI.Close("Health Test")
