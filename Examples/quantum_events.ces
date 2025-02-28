@@ -7,7 +7,7 @@ Game.OnGameStart("EventsTest", func()
 	print("[CHEAT ENGINE] Quantum Game Stated!")
 	x = Game.SubscribeEvent("EventsTest", "EventOnMatchStateUpdated", func(x)
 	{
-		if(x.State == getEnumValue("Quantum.MatchState", "Started"))
+		if(x.State == enumValue("Quantum.MatchState", "Started"))
 		{
 			print("[CHEAT ENGINE] Match Started!")
 			print("[CHEAT SYSTEM]: My Actor is " + Game.Frame.Get("Actor", Game.Frame.LocalPlayerEntity).Id)
