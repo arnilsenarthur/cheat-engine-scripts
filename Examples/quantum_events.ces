@@ -10,7 +10,7 @@ Game.OnGameStart("EventsTest", func()
 		if(x.State == enumValue("Quantum.MatchState", "Started"))
 		{
 			print("[CHEAT ENGINE] Match Started!")
-			print("[CHEAT SYSTEM]: My Actor is " + Game.Frame.Get("Actor", Game.Frame.LocalPlayerEntity).Id)
+			print("[CHEAT SYSTEM]: My Actor is " + Game.Frame.Get("Actor", Game.LocalPlayerEntity).Id)
 		}
 	})
 })
