@@ -9,7 +9,6 @@ btn1 = GUI.Button('Set to 100', func(){
 })
 
 btn2 = GUI.Button('Show Health', func(){
-	
 	label = GUI.TrackValue(func(){
 		if(Game.Frame.Has("Health", Game.LocalPlayerEntity))
 			Game.Frame.Get("Health", Game.LocalPlayerEntity).CurrentHealth
