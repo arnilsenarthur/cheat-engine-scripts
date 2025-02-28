@@ -5,7 +5,7 @@ print("[CHEAT ENGINE] Hello world!")
 Game.OnGameStart(func()
 {
 	print("[CHEAT ENGINE] Quantum Game Stated!")
-	x = Game.SubscribeEvent("EventOnMatchStateUpdated", func(x)
+	id = Game.SubscribeEvent("EventOnMatchStateUpdated", func(x)
 	{
 		if(x.State == enumValue("Quantum.MatchState", "Started"))
 		{
@@ -14,17 +14,6 @@ Game.OnGameStart(func()
 		}
 	})
 })
-
-"Some events has shortcuts"
-Game.OnMatchStarted(func()
-	print("[CHEAT ENGINE] Match Started 2!]")
-)
-
-id = Game.OnMatchStarted(func()
-	print("[CHEAT ENGINE] Match Started 3!]")
-)
-"Unsubscribe event"
-Game.UnsubscribeEvent(id)
 
 print(Quantum.GetComponentType("Actor"))
 print(Quantum.GetSystemType("HealthSystem"))
