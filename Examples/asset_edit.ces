@@ -1,10 +1,10 @@
-Game.UnsubscribeAllEvents("AssetsTest")
-GUI.CloseWindow("Test")
+Game.UnsubscribeAllEvents()
+GUI.CloseAllWindows()
 
 Game.OnGameStart("AssetsTest", func()
 {
 	print("[CHEAT ENGINE] Game Started...")	
-	x = Game.SubscribeEvent("AssetsTest", "EventOnMatchStateUpdated", func(x)
+	x = Game.SubscribeEvent("EventOnMatchStateUpdated", func(x)
 	{
 		print("[CHEAT ENGINE] Match State:" + x.State)	
 		if(x.State == enumValue("Quantum.MatchState", "Created"))
