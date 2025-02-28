@@ -1,11 +1,11 @@
-Game.UnsubscribeAllEvents("EventsTest")
+Game.UnsubscribeAllEvents()
 
 print("[CHEAT ENGINE] Hello world!")
 
-Game.OnGameStart("EventsTest", func()
+Game.OnGameStart(func()
 {
 	print("[CHEAT ENGINE] Quantum Game Stated!")
-	x = Game.SubscribeEvent("EventsTest", "EventOnMatchStateUpdated", func(x)
+	x = Game.SubscribeEvent("EventOnMatchStateUpdated", func(x)
 	{
 		if(x.State == enumValue("Quantum.MatchState", "Started"))
 		{
