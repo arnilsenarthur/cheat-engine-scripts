@@ -17,7 +17,7 @@ Game.OnGameStart("AssetsTest", func()
 
 			'Edição de asset na interface'
 			'object , field_name, asset_type, asset_field_to_show'
-			f = GUI.AssetField(rc, "MovementData", "MovementData", "InertiaTime")
+			f = GUI.AssetField(rc, "MovementData", "MovementData", "MovementSpeed")
 			w = GUI.Window('Test', f, true)
 
 		}
