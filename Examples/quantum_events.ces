@@ -1,19 +1,18 @@
-Game.UnsubscribeAllEvents()
+"Game.UnsubscribeAll()" "Call this to unsubcribe all events from this script"
 
-print("[CHEAT ENGINE] Hello world!")
+Game.OnGameStart(func() {
 
-Game.OnGameStart(func()
-{
-	print("[CHEAT ENGINE] Quantum Game Stated!")
-	id = Game.SubscribeEvent("EventOnMatchStateUpdated", func(x)
-	{
-		if(x.State == enumValue("Quantum.MatchState", "Started"))
+	print("[CHEAT ENGINE] Game Started")
+	y = Game.OnMatchStateUpdated(func(m) print("[CHEAT ENGINE] Match State Updated 1: " + m))
+	z = Game.OnQuantumEvent("EventOnMatchStateUpdated", func(m) {
+		print("[CHEAT ENGINE] Match State Updated: " + m.State)
+		if(m.State == enumValue("Quantum.MatchState", "Started"))
 		{
 			print("[CHEAT ENGINE] Match Started!")
-			print("[CHEAT SYSTEM]: My Actor is " + Game.Frame.Get("Actor", Game.LocalPlayerEntity).Id)
+			print("[CHEAT ENGINE] My Actor is " + Game.Frame.Get("Actor", Game.LocalPlayerEntity).Id)
 		}
 	})
+	y.Unsubscribe() "You can use z.Dispose() or Game.Unsubsribe(z) as well"
 })
-
-print(Quantum.GetComponentType("Actor"))
-print(Quantum.GetSystemType("HealthSystem"))
+Game.OnGameShutdown(func() print("[CHEAT ENGINE] Game Shutdown"))
+print("[CHEAT ENGINE] Wating for game to begin...")
