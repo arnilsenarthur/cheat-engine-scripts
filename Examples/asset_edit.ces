@@ -1,28 +1,24 @@
-Game.UnsubscribeAllEvents()
-GUI.CloseAllWindows()
 
-Game.OnGameStart(func()
-{
+Game.OnGameStart(func() {
 	print("[CHEAT ENGINE] Game Started...")	
-	x = Game.SubscribeEvent("EventOnMatchStateUpdated", func(x)
+	y = Game.OnMatchStateUpdated(func(state)
 	{
-		print("[CHEAT ENGINE] Match State:" + x.State)	
-		if(x.State == enumValue("Quantum.MatchState", "Created"))
+		if(state == enumValue("Quantum.MatchState", "Created"))
 		{
 			rc = Game.Frame.RuntimeConfig
 
 			'Edicao de asset nornmal'
-			'md = Game.Frame.BeginEditAsset("MovementData", rc.MovementData.Id)
+			md = Game.Frame.BeginEditAsset("MovementData", rc.MovementData.Id)
 			md.MovementSpeed = Quantum.ToFP(10)
-			rc.MovementData = Game.Frame.FinishEditAsset(md)'
+			rc.MovementData = Game.Frame.FinishEditAsset(md)
 
 			'Edição de asset na interface'
 			'object , field_name, asset_type, asset_field_to_show'
-			f = GUI.AssetField(rc, "MovementData", "MovementData", "MovementSpeed")
+			f = GUI.AssetField(rc, "MovementData", "MovementData", "InertiaTime")
 			w = GUI.Window("Test", f, true)
-
 		}
+	
 	})
 })
 
-print("[CHEAT ENGINE] Wating for match...")
+print("[CHEAT ENGINE] Wating for game...")
